@@ -3,8 +3,6 @@ import { DurationsService } from '../durations/durations.service';
 
 @Component({
   selector: 'app-index-durations',
-  standalone: true,
-  imports: [],
   templateUrl: './index-durations.component.html',
   styleUrl: './index-durations.component.css'
 })
@@ -15,3 +13,4 @@ export class IndexDurationsComponent implements OnInit {
     console.log(duraitons);
   }
 }
+
