@@ -7,17 +7,17 @@
               <h1 style="margin-left: 80px;">Kayıt Ol</h1>
             </div>
           </div>
-          <form nz-form>
+          <form nz-form [formGroup]="signupForm">
 
             <nz-form-item>
               <nz-form-control nzHasFeedback nzErrorTip="The input is not valid E-mail">
-                <input nz-input placeholder="E-mail" id="email" />
+                <input nz-input placeholder="E-mail" id="email" formControlName="email"/>
               </nz-form-control>
             </nz-form-item>
 
             <nz-form-item>
               <nz-form-control nzHasFeedback [nzErrorTip]="errorPass">
-                <input nz-input placeholder="Password" type="password" id="password" />
+                <input nz-input placeholder="Password" type="password" id="password" formControlName="password"/>
                 <ng-template #errorPass let-control>
                   <ng-container *ngIf="control.hasError('required')">
                     Lütfen şifrenizi giriniz!
@@ -31,7 +31,7 @@
 
             <nz-form-item>
                 <nz-form-control nzHasFeedback [nzErrorTip]="errorTpl">
-                  <input nz-input type="password" placeholder="Confirm Password" id="checkPassword" />
+                  <input nz-input type="password" placeholder="Confirm Password" id="checkPassword" formControlName="checkPassword"/>
                   <ng-template #errorTpl let-control>
                     <ng-container *ngIf="control.hasError('required')">
                       Lütfen şifrenizi onaylayınız!
@@ -45,7 +45,7 @@
               
               <nz-form-item>
                 <nz-form-control nzHasFeedback [nzErrorTip]="userErrorTpl">
-                  <input nz-input placeholder="Name" id="username" />
+                  <input nz-input placeholder="Name" id="username" formControlName="name"/>
                   <ng-template #userErrorTpl let-control>
                     <ng-container *ngIf="control.hasError('required')">
                       Lütfen kullanıcı adınızı giriniz!
@@ -53,7 +53,7 @@
                   </ng-template>
                 </nz-form-control>
               </nz-form-item>
-              <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Kayıt Ol</button>
+              <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)="register()" [disabled]="signupForm.invalid">Kayıt Ol</button>
               Zaten bir hesabınız var mı? Şimdi <a routerLink="/login">Giriş Yap!</a>
           </form>
         </div>
