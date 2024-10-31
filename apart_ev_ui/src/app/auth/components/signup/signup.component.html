@@ -1,5 +1,5 @@
-<div class="bg" style="background-color: #F8F8F8;">
-    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+<div class="bg" style="background-color: #8F8F8F;">
+    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Yükleniyor...">
       <div class="parent">
         <div class="child">
           <div nz-row class="imgDiv">
@@ -17,7 +17,7 @@
 
             <nz-form-item>
               <nz-form-control nzHasFeedback [nzErrorTip]="errorPass">
-                <input nz-input placeholder="Password" type="password" id="password" formControlName="password"/>
+                <input nz-input placeholder="Şifre" type="password" id="password" formControlName="password"/>
                 <ng-template #errorPass let-control>
                   <ng-container *ngIf="control.hasError('required')">
                     Lütfen şifrenizi giriniz!
@@ -31,7 +31,7 @@
 
             <nz-form-item>
                 <nz-form-control nzHasFeedback [nzErrorTip]="errorTpl">
-                  <input nz-input type="password" placeholder="Confirm Password" id="checkPassword" formControlName="checkPassword"/>
+                  <input nz-input type="password" placeholder="Şifreyi tekrar" id="checkPassword" formControlName="checkPassword"/>
                   <ng-template #errorTpl let-control>
                     <ng-container *ngIf="control.hasError('required')">
                       Lütfen şifrenizi onaylayınız!
@@ -45,7 +45,7 @@
               
               <nz-form-item>
                 <nz-form-control nzHasFeedback [nzErrorTip]="userErrorTpl">
-                  <input nz-input placeholder="Name" id="username" formControlName="name"/>
+                  <input nz-input placeholder="Ad" id="username" formControlName="name"/>
                   <ng-template #userErrorTpl let-control>
                     <ng-container *ngIf="control.hasError('required')">
                       Lütfen kullanıcı adınızı giriniz!

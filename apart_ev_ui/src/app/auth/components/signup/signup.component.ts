@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth/auth.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +13,12 @@ export class SignupComponent {
   isSpinning: boolean = false;
   signupForm!: FormGroup;
 
-  constructor(private fb: FormBuilder){}
+  constructor(
+    private fb: FormBuilder, 
+    private authService: AuthService,
+    private message: NzMessageService,
+    private router: Router
+  ){}
 
   ngOnInit() {
     this.signupForm = this.fb.group({
@@ -31,7 +39,16 @@ export class SignupComponent {
 };
 
 
-  register() {
+  register() {//TODO: BURANIN AYNISINDAN LOGİN E DE EKLE TOASTR İÇİN
     console.log(this.signupForm.value);
+    this.authService.register(this.signupForm.value).subscribe((res) => {
+      console.log(res);
+      if(res.id != null){
+        this.message.success("Kayıt başarılı!", {nzDuration: 3000});
+        this.router.navigateByUrl("/login");
+      } else {
+        this.message.error("Bir terslik oldu, lütfen tekrar deneyiniz.", {nzDuration: 3000});
+      }
+    })
   }
 }
