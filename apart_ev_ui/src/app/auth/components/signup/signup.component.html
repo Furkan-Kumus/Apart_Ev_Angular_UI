@@ -1,0 +1,63 @@
+<div class="bg" style="background-color: #F8F8F8;">
+    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+      <div class="parent">
+        <div class="child">
+          <div nz-row class="imgDiv">
+            <div nz-col nzSpan="24">
+              <h1 style="margin-left: 80px;">Kayıt Ol</h1>
+            </div>
+          </div>
+          <form nz-form>
+
+            <nz-form-item>
+              <nz-form-control nzHasFeedback nzErrorTip="The input is not valid E-mail">
+                <input nz-input placeholder="E-mail" id="email" />
+              </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+              <nz-form-control nzHasFeedback [nzErrorTip]="errorPass">
+                <input nz-input placeholder="Password" type="password" id="password" />
+                <ng-template #errorPass let-control>
+                  <ng-container *ngIf="control.hasError('required')">
+                    Lütfen şifrenizi giriniz!
+                  </ng-container>
+                  <ng-container *ngIf="control.hasError('pattern')">
+                    Şifre 8 Karakter, 1 Küçük Harf, 1 Büyük Harf, 1 Sayı ve 1 Özel Karakter İçermelidir.
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-control nzHasFeedback [nzErrorTip]="errorTpl">
+                  <input nz-input type="password" placeholder="Confirm Password" id="checkPassword" />
+                  <ng-template #errorTpl let-control>
+                    <ng-container *ngIf="control.hasError('required')">
+                      Lütfen şifrenizi onaylayınız!
+                    </ng-container>
+                    <ng-container *ngIf="control.hasError('confirm')">
+                      Girdiğiniz şifreler uyuşmuyor!
+                    </ng-container>
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+              
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzErrorTip]="userErrorTpl">
+                  <input nz-input placeholder="Name" id="username" />
+                  <ng-template #userErrorTpl let-control>
+                    <ng-container *ngIf="control.hasError('required')">
+                      Lütfen kullanıcı adınızı giriniz!
+                    </ng-container>
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+              <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Kayıt Ol</button>
+              Zaten bir hesabınız var mı? Şimdi <a routerLink="/login">Giriş Yap!</a>
+          </form>
+        </div>
+      </div>
+    </nz-spin>
+  </div>
+  
