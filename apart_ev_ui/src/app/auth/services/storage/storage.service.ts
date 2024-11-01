@@ -24,7 +24,7 @@ export class StorageService {
         return window.localStorage.getItem(TOKEN);
     }
     
-    static getUser() {//TODO: ???? orijinalinde böyle değil
+    static getUser() {//TODO: ???? orijinalinde böyle değil SOR 2
         const user = localStorage.getItem(USER);
         if (user) {
             return JSON.parse(user);
@@ -50,5 +50,9 @@ export class StorageService {
         return role == "CUSTOMER";
     }
     
+    static logout(): void {
+        window.localStorage.removeItem(TOKEN);
+        window.localStorage.removeItem(USER);
+    }
 }
 

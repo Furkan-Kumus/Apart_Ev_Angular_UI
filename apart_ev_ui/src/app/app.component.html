@@ -1,11 +1,36 @@
-<div>
+
+<!-- <div *ngIf="!isAdminLoggedIn> TODO: BURANIN BÖYLE OLMASI LAZIM DÜZELTMEK İÇİN YAPTIM SOR 1 -->
+
+<div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
   <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
     <div class="navbar-title">
-      <a routerLink="/login">Car Rental Service</a>
+      <a routerLink="/login">ApartEv</a>
     </div>
     <div class="nav-links">
       <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Kayıt Ol</a>
       <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Giriş Yap</a>
+    </div>
+  </nz-header>
+</div>
+<div *ngIf="isAdminLoggedIn">
+  <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
+    <div class="navbar-title">
+      <a routerLink="/login">Admin Hesabı Aktif</a>
+    </div>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active">Kontrol Paneli</a>
+      <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Çıkış Yap</a>
+    </div>
+  </nz-header>
+</div>
+<div *ngIf="isCustomerLoggedIn">
+  <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
+    <div class="navbar-title">
+      <a routerLink="/login">ApartEv</a>
+    </div>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/customer/dashboard" routerLinkActive="active">Kontrol Paneli</a>
+      <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Çıkış Yap</a>
     </div>
   </nz-header>
 </div>
