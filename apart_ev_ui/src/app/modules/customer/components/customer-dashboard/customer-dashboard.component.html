@@ -1,1 +1,28 @@
-<p>customer-dashboard works!</p>
+<div style="background-color: #F8F8F8; min-height: 91vh;">
+
+    <div style="padding-top: 10px;"></div>
+    <div style="margin-top:10px;" class="child" *ngFor="let apart of aparts">
+      <div nz-row>
+        <div nz-col nzSpan="8">
+          <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;" [src]="apart.processedImg"
+            alt="profile" />
+        </div>
+        <div nz-col nzSpan="16">
+          <h2 style="cursor: pointer; color: #108ee9;">
+            {{apart.brand}} - {{apart.name}}
+          </h2>
+          <p>{{apart.description}}</p>
+          <hr>
+          <h5>Price : <b>${{apart.price}}</b> - Color : <b>{{apart.color}}</b> - Transmission :
+            <b>{{apart.transmission}}</b> - Type : <b>{{apart.type}}</b> - Year : <b>{{apart.year | date: 'yyyy'}}</b>
+          </h5>
+          <hr>
+          <div style="float: right;">
+            <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" routerLink="/customer/book/{{apart.id}}">
+              Rezervasyon
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
