@@ -17,6 +17,11 @@
           <b>{{apart.transmission}}</b> - Type : <b>{{apart.type}}</b> - Year : <b>{{apart.year | date: 'yyyy'}}</b>
         </h5>
         <hr>
+        <div style="float: right;">
+          <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteApart(apart.id)">
+            Yayından Kaldır
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -8,7 +9,7 @@ import { AdminService } from '../../services/admin.service';
 })
 export class AdminDashboardComponent {
   aparts: any = [];
-  constructor(private adminService: AdminService){}
+  constructor(private adminService: AdminService, private message: NzMessageService){}
 
   ngOnInit(){
     this.getAllAparts();
@@ -23,5 +24,15 @@ export class AdminDashboardComponent {
       });
     });
   }
+
+  //TODO: COMPONENTTEN VERİLER GİTMİYODU DOĞRU BİR KULLANIM MI -> SOR (A)
+  deleteApart(id: number) {
+    console.log(id);
+    this.adminService.deleteApart(id).subscribe(() => {
+      this.aparts = this.aparts.filter((apart: any) => apart.id !== id);
+      this.message.success("Apart başarıyla yayından kaldırıldı!", { nzDuration: 3000 });
+    });
+  }
+  
   
 }
