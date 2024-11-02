@@ -7,6 +7,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     NzButtonModule,
     NzInputModule,
     NzLayoutModule,
-    NzPageHeaderModule
+    NzPageHeaderModule,
+
+    NzDatePickerModule,
+    NzSelectModule
   ]
 })
 export class NgZorroImportsModule {}
