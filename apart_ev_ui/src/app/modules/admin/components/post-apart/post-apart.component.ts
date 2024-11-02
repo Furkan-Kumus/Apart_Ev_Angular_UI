@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AdminService } from '../../services/admin.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { error } from 'console';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-apart',
@@ -24,7 +28,12 @@ export class PostApartComponent {
   listOfColor = ["Red", "White", "Blue", "Black", "Orange", "Grey", "Silver"];
   listOfTransmission = ["Manual", "Automatic"];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder, 
+    private adminService: AdminService,
+    private message: NzMessageService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.postApartForm = this.fb.group({
@@ -69,8 +78,9 @@ export class PostApartComponent {
     }
   
     console.log(this.postApartForm.value);
+    this.isSpinning = true;
     const formData: FormData = new FormData();
-    formData.append('img', this.selectedFile); 
+    formData.append('image', this.selectedFile); 
     formData.append('brand', this.postApartForm.get('brand')?.value);
     formData.append('name', this.postApartForm.get('name')?.value);
     formData.append('type', this.postApartForm.get('type')?.value);
@@ -80,6 +90,14 @@ export class PostApartComponent {
     formData.append('description', this.postApartForm.get('description')?.value);
     formData.append('price', this.postApartForm.get('price')?.value);
     console.log(formData);
+    this.adminService.postApart(formData).subscribe((res) => {
+      this.isSpinning = false;
+      this.message.success("Apart Başarıyla Yayınlandı!", {nzDuration: 3000});
+      this.router.navigateByUrl("/admin/dashboard");
+      console.log(res);
+    }, error => {
+      this.message.error("Apart oluşturulamadı, lütfen tekrar deneyiniz.", {nzDuration: 3000});
+    })
   }
 
   onFileSelected(event: any) {
