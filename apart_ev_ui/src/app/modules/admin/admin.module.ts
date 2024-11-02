@@ -6,12 +6,14 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { PostApartComponent } from './components/post-apart/post-apart.component';
 import { NgZorroImportsModule } from '../../NgZorroImportsModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateApartComponent } from './components/update-apart/update-apart.component';
 
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
-    PostApartComponent
+    PostApartComponent,
+    UpdateApartComponent
   ],
   imports: [
     CommonModule,

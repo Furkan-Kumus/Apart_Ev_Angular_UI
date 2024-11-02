@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { PostApartComponent } from './components/post-apart/post-apart.component';
+import { UpdateApartComponent } from './components/update-apart/update-apart.component';
 
 const routes: Routes = [
   {path: "dashboard", component: AdminDashboardComponent},
-  {path: "apart", component: PostApartComponent}
+  {path: "apart", component: PostApartComponent},
+  {path: "apart/:id", component: UpdateApartComponent}
 ];
 
 @NgModule({

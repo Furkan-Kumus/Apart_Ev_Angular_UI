@@ -30,6 +30,18 @@ export class AdminService {
     });
   }
 
+  getApartById(id:number):Observable<any>{
+    return this.http.get(BASIC_URL + "/api/admin/apart/" + id, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
+  updateApart(apartId: number, apartDto: any): Observable<any> {
+    return this.http.put(BASIC_URL + "/api/admin/apart/" + apartId, apartDto, {
+        headers: this.createAuthorizationHeader()
+    });
+  }
+
   createAuthorizationHeader(): HttpHeaders {
       let authHeaders: HttpHeaders = new HttpHeaders();
       return authHeaders.set(

@@ -18,6 +18,9 @@
         </h5>
         <hr>
         <div style="float: right;">
+          <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" routerLink="/admin/apart/{{apart.id}}">
+            Güncelle
+          </button>
           <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteApart(apart.id)">
             Yayından Kaldır
           </button>
