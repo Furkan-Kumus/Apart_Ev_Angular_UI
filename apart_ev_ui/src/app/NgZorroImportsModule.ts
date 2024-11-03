@@ -9,6 +9,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 
 
@@ -21,9 +22,9 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
     NzInputModule,
     NzLayoutModule,
     NzPageHeaderModule,
-
     NzDatePickerModule,
-    NzSelectModule
+    NzSelectModule,
+    NzTableModule
   ]
 })
 export class NgZorroImportsModule {}

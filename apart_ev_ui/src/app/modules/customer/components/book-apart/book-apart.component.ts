@@ -44,7 +44,7 @@ export class BookApartComponent implements OnInit {
     });
   }
 
-  bookAApart(data: any){
+  bookAApart(data: any) {
     console.log(data);
     this.isSpinning = true;
     let bookAApartDto = {
@@ -53,12 +53,14 @@ export class BookApartComponent implements OnInit {
       userId: StorageService.getUserId(),
       apartId: this.apartId
     }
-    this.service.bookAApart(bookAApartDto).subscribe((res) => {
+  
+    this.service.bookAApart(this.apartId, bookAApartDto).subscribe((res) => {
       console.log(res);
       this.message.success("Apart Rezervasyon Talebiniz Başarıyla Alındı!", { nzDuration: 3000 });
       this.router.navigateByUrl("/customer/dashboard");
     }, error => {
       this.message.error("Rezervasyon Talebi Alınamadı, lütfen tekrar deneyiniz.", { nzDuration: 3000 });
-    })
+    });
   }
+  
 }

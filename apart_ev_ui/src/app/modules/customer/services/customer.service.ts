@@ -24,8 +24,15 @@ export class CustomerService {
     });
   }
 
-  bookAApart(bookAApartDto: any): Observable<any> {
-    return this.http.post(BASIC_URL + "/api/customer/apart/book" + bookAApartDto, {
+  bookAApart(apartId: any, bookAApartDto: any): Observable<any> {
+    return this.http
+      .post<[]>(BASIC_URL + '/api/customer/apart/book/' + apartId, bookAApartDto, {
+        headers: this.createAuthorizationHeader()
+    });
+  }
+
+  getBookingsByUserId(): Observable<any> {
+    return this.http.get(BASIC_URL + "/api/customer/apart/bookings/" + StorageService.getUserId(), {
       headers: this.createAuthorizationHeader()
     });
   }

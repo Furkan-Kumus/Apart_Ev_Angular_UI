@@ -1,0 +1,45 @@
+/* table-container.scss veya uygun bir SCSS dosyası */
+
+:host {
+    display: block;
+    margin: 20px;
+}
+
+/* Tablonun genel görünümü */
+.nz-table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: #f0f0f0; /* Başlık hücreleri için arka plan rengi */
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Satır altı çizgisi */
+    font-size: 14px;
+}
+
+/* Satır üzerine gelindiğinde arka plan rengi değişimi */
+tr:hover {
+    background-color: #f9f9f9; /* Hover etkisi için arka plan rengi */
+}
+
+/* İstatüsüne göre stil uygulama */
+strong {
+    font-weight: bold; /* Kalın metin */
+    font-size: 14px;
+}
+
+/* Yükleniyor simgesi */
+.nz-spin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Yükleniyor simgesi için tam yükseklik */
+}
