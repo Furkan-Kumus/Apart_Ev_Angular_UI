@@ -5,6 +5,7 @@ import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerDashboardComponent } from './components/customer-dashboard/customer-dashboard.component';
 import { BookApartComponent } from './components/book-apart/book-apart.component';
 import { NgZorroImportsModule } from '../../NgZorroImportsModule';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { NgZorroImportsModule } from '../../NgZorroImportsModule';
   imports: [
     CommonModule,
     NgZorroImportsModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class CustomerModule { }
