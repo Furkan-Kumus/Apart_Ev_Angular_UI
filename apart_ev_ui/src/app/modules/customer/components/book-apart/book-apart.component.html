@@ -18,12 +18,6 @@
                         'yyyy'}}</b>
                 </h5>
                 <hr>
-                <div style="float: right;">
-                    <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary"
-                        routerLink="/customer/book/{{apart.id}}">
-                        Rezervasyon
-                    </button>
-                </div>
             </div>
         </div>
     </div>
@@ -50,7 +44,8 @@
                         </nz-form-item>
                     </div>
                     <div class="filter-select-dropdown filter-fields-width">
-                        <button class="filterBtn" style="margin-left: 45px;" nz-button nzType="primary" (click)="bookAApart(validateForm.value)">
+                        <button class="filterBtn" style="margin-left: 45px;" nz-button nzType="primary"
+                            (click)="bookAApart(validateForm.value)">
                             Apartı Rezerve Et
                         </button>
                     </div>

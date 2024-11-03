@@ -7,13 +7,15 @@ import { PostApartComponent } from './components/post-apart/post-apart.component
 import { NgZorroImportsModule } from '../../NgZorroImportsModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateApartComponent } from './components/update-apart/update-apart.component';
+import { GetBookingsComponent } from './components/get-bookings/get-bookings.component';
 
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     PostApartComponent,
-    UpdateApartComponent
+    UpdateApartComponent,
+    GetBookingsComponent
   ],
   imports: [
     CommonModule,

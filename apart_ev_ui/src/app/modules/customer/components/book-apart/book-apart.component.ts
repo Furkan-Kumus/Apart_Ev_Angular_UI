@@ -44,7 +44,7 @@ export class BookApartComponent implements OnInit {
     });
   }
 
-  bookAApart(data: any) {
+  bookAApart(data: any) { //TODO: DATE ÇALIŞMIYO DATABASE E VERİ NULL GİDİYO SOR (C)
     console.log(data);
     this.isSpinning = true;
     let bookAApartDto = {
