@@ -8,6 +8,7 @@ import { NgZorroImportsModule } from '../../NgZorroImportsModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateApartComponent } from './components/update-apart/update-apart.component';
 import { GetBookingsComponent } from './components/get-bookings/get-bookings.component';
+import { SearchApartComponent } from './components/search-apart/search-apart.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { GetBookingsComponent } from './components/get-bookings/get-bookings.com
     AdminDashboardComponent,
     PostApartComponent,
     UpdateApartComponent,
-    GetBookingsComponent
+    GetBookingsComponent,
+    SearchApartComponent
   ],
   imports: [
     CommonModule,

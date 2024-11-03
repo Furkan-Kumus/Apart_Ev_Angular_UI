@@ -7,13 +7,15 @@ import { BookApartComponent } from './components/book-apart/book-apart.component
 import { NgZorroImportsModule } from '../../NgZorroImportsModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyBookingsComponent } from './components/my-bookings/my-bookings.component';
+import { SearchApartComponent } from './components/search-apart/search-apart.component';
 
 
 @NgModule({
   declarations: [
     CustomerDashboardComponent,
     BookApartComponent,
-    MyBookingsComponent
+    MyBookingsComponent,
+    SearchApartComponent
   ],
   imports: [
     CommonModule,
