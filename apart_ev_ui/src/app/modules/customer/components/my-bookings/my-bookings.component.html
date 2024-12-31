@@ -17,16 +17,11 @@
                 <td>{{booking.price}}</td>
                 <td>
                     <strong
-                        [ngStyle]="{
-                            'color': 
-                                booking.bookApartStatus === 'APPROVED' ? 'green' :
-                                booking.bookApartStatus === 'REJECTED' ? 'red' :
-                                booking.bookApartStatus === 'PENDING' ? 'blue' :
-                                'black'
-                        }">
-                        {{ booking.bookApartStatus }}
+                      [ngStyle]="{ 'color': booking.bookApartStatus | bookingStatus:'color' }">
+                      {{ booking.bookApartStatus | bookingStatus:'text' }}
                     </strong>
-                </td>
+                  </td>
+                  
                 
             </tr>
         </tbody>

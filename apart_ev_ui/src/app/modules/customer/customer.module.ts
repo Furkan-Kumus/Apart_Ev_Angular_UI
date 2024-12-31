@@ -8,6 +8,7 @@ import { NgZorroImportsModule } from '../../NgZorroImportsModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyBookingsComponent } from './components/my-bookings/my-bookings.component';
 import { SearchApartComponent } from './components/search-apart/search-apart.component';
+import { BookingStatusPipe } from './components/pipes/booking-status.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SearchApartComponent } from './components/search-apart/search-apart.com
     CustomerDashboardComponent,
     BookApartComponent,
     MyBookingsComponent,
-    SearchApartComponent
+    SearchApartComponent,
+    BookingStatusPipe
   ],
   imports: [
     CommonModule,
