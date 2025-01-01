@@ -14,6 +14,7 @@ import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './auth/components/login/login.component';
 import { SignupComponent } from './auth/components/signup/signup.component';
 import { NgZorroImportsModule } from './NgZorroImportsModule';
+import { CustomButtonDirective } from './CustomDirectives/custom-button.directive';
 
 registerLocaleData(en);
 
@@ -21,7 +22,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CustomButtonDirective
   ],
   imports: [
     BrowserModule,
