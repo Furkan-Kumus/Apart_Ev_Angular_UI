@@ -4,9 +4,9 @@
             <div class="filter-grid" [formGroup]="searchApartForm">
                 <div class="filter-select-dropdown filter-fields-width">
                     <nz-form-item>
-                        <nz-form-label nzFor="gender">Brand</nz-form-label>
+                        <nz-form-label nzFor="gender">Şehir</nz-form-label>
                         <nz-form-control nzErrorTip="This Input Is Required!">
-                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Brand" formControlName="brand">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Şehir Seçiniz" formControlName="brand">
                                 <nz-option *ngFor="let brand of listOfBrands" nzLabel="{{brand}}" nzValue="{{brand}}">
                                 </nz-option>
                             </nz-select>
@@ -14,9 +14,9 @@
                     </nz-form-item>
 
                     <nz-form-item>
-                        <nz-form-label nzFor="studentClass">Type</nz-form-label>
+                        <nz-form-label nzFor="studentClass">Oda Sayısı</nz-form-label>  
                         <nz-form-control nzErrorTip="This Input Is Required!">
-                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Type" formControlName="type">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Oda Sayısı Seçiniz" formControlName="type">
                                 <nz-option *ngFor="let type of listOfType" nzLabel="{{type}}" nzValue="{{type}}">
                                 </nz-option>
                             </nz-select>
@@ -24,9 +24,9 @@
                     </nz-form-item>
 
                     <nz-form-item>
-                        <nz-form-label nzFor="gender">Color</nz-form-label>
+                        <nz-form-label nzFor="gender">Kat</nz-form-label>
                         <nz-form-control nzErrorTip="This Input Is Required!">
-                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Color" formControlName="color">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Kat Seçiniz" formControlName="color">
                                 <nz-option *ngFor="let color of listOfColor" nzLabel="{{color}}"
                                     nzValue="{{color}}"></nz-option>
                             </nz-select>
@@ -34,9 +34,9 @@
                     </nz-form-item>
 
                     <nz-form-item>
-                        <nz-form-label nzFor="studentClass">Transmission</nz-form-label>
+                        <nz-form-label nzFor="studentClass">Metrekare</nz-form-label>
                         <nz-form-control nzErrorTip="This Input Is Required!">
-                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Transmission"
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Metrekare Seçiniz"
                                 formControlName="transmission">
                                 <nz-option *ngFor="let transmission of listOfTransmission" nzLabel="{{transmission}}"
                                     nzValue="{{transmission}}"></nz-option>
@@ -45,7 +45,7 @@
                     </nz-form-item>
                 </div>
                 <div class="filter-select-dropdown filter-fields-width">
-                    <button class="filterBtn" nz-button nzType="primary" (click)="searchApart()">Search Car</button>
+                    <button class="filterBtn" nz-button nzType="primary" (click)="searchApart()">Apart Ara</button>
                 </div>
             </div>
         </div>
@@ -65,9 +65,9 @@
                 </h2>
                 <p>{{apart.description}}</p>
                 <hr>
-                <h5>Price : <b>{{apart.price}}</b> - Color : <b>{{apart.color}}</b> - Transmission :
-                    <b>{{apart.transmission}}</b> - Type : <b>{{apart.type}}</b> - Year : <b>{{apart.year | date:
-                        'yyyy'}}</b></h5>
+                <h5>Fiyat : <b>${{apart.price}}</b> - Kat : <b>{{apart.color}}</b> - Metrekare :
+                    <b>{{apart.transmission}}</b> - Oda Sayısı : <b>{{apart.type}}</b> - Yıl : <b>{{apart.year | date: 'yyyy'}}</b>
+                  </h5>
                 <hr>
             </div>
         </div>

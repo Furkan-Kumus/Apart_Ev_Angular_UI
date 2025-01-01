@@ -13,10 +13,9 @@
                 </h2>
                 <p>{{apart.description}}</p>
                 <hr>
-                <h5>Price : <b>${{apart.price}}</b> - Color : <b>{{apart.color}}</b> - Transmission :
-                    <b>{{apart.transmission}}</b> - Type : <b>{{apart.type}}</b> - Year : <b>{{apart.year | date:
-                        'yyyy'}}</b>
-                </h5>
+                <h5>Fiyat : <b>${{apart.price}}</b> - Kat : <b>{{apart.color}}</b> - Metrekare :
+                    <b>{{apart.transmission}}</b> - Oda Sayısı : <b>{{apart.type}}</b> - Yıl : <b>{{apart.year | date: 'yyyy'}}</b>
+                  </h5>
                 <hr>
             </div>
         </div>
@@ -27,18 +26,18 @@
                 <div class="filter-grid">
                     <div class="filter-select-dropdown filter-fields-width">
                         <nz-form-item style="margin-left: 50px;">
-                            <nz-form-label [nzSpan]="0" nzFor="From Date">From Date</nz-form-label>
+                            <nz-form-label [nzSpan]="0" nzFor="From Date">Başlangıç Tarihi</nz-form-label>
                             <nz-form-control [nzSpan]="0">
                                 <nz-date-picker formControlName="fromDate" style="width: 100%;"
-                                    nzPlaceHolder="From Date" name="From Date" [nzFormat]="dateFormat"
+                                    nzPlaceHolder="Başlangıç Seçiniz" name="From Date" [nzFormat]="dateFormat"
                                     id="From Date"></nz-date-picker>
                             </nz-form-control>
                         </nz-form-item>
 
                         <nz-form-item style="margin-left: 100px;">
-                            <nz-form-label [nzSpan]="0" nzFor="To Date">To Date</nz-form-label>
+                            <nz-form-label [nzSpan]="0" nzFor="To Date">Bitiş Tarihi</nz-form-label>
                             <nz-form-control [nzSpan]="0">
-                                <nz-date-picker formControlName="toDate" style="width: 100%;" nzPlaceHolder="To Date"
+                                <nz-date-picker formControlName="toDate" style="width: 100%;" nzPlaceHolder="Bitiş Seçiniz"
                                     name="To Date" [nzFormat]="dateFormat" id="To Date"></nz-date-picker>
                             </nz-form-control>
                         </nz-form-item>

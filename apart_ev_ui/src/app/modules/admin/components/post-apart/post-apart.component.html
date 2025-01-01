@@ -3,7 +3,7 @@
       <div class="parent">
         <div class="child">
           <div nz-row class="imgDiv">
-            <h2 style="margin-left: 230px">Post Car</h2>
+            <h2 style="margin-left: 230px">Apart Ekle</h2>
           </div>
           
           <form nz-form [formGroup]="postApartForm">
@@ -23,7 +23,7 @@
             <div nz-col nzSpan="24">
               <nz-form-item>
                 <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
-                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Brand Name" formControlName="brand">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Şehir Seçiniz" formControlName="brand">
                     <nz-option *ngFor="let brand of listOfBrands" nzLabel="{{ brand }}" nzValue="{{ brand }}">
                     </nz-option>
                   </nz-select>
@@ -34,7 +34,7 @@
             <div nz-col nzSpan="24">
               <nz-form-item>
                 <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
-                  <input nz-input placeholder="Name" formControlName="name"/>
+                  <input nz-input placeholder="İlçe" formControlName="name"/>
                 </nz-form-control>
               </nz-form-item>
             </div>
@@ -42,7 +42,7 @@
             <div nz-col nzSpan="24">
               <nz-form-item>
                 <nz-form-control nzErrorTip="This Input Is Required!">
-                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Type" formControlName="type">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Oda Sayısı Seçiniz" formControlName="type">
                     <nz-option *ngFor="let type of listOfType" nzLabel="{{ type }}" nzValue="{{ type }}">
                     </nz-option>
                   </nz-select>
@@ -53,7 +53,7 @@
             <div nz-col nzSpan="24">
                 <nz-form-item>
                   <nz-form-control nzErrorTip="This Input Is Required!">
-                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Transmission"  formControlName="transmission">
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Metrekare Seçiniz"  formControlName="transmission">
                       <nz-option *ngFor="let transmission of listOfTransmission"
                                  nzLabel="{{ transmission }}" nzValue="{{ transmission }}">
                       </nz-option>
@@ -65,7 +65,7 @@
               <div nz-col nzSpan="24">
                 <nz-form-item>
                   <nz-form-control nzErrorTip="This Input Is Required!">
-                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Color"  formControlName="color">
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Kat Seçiniz"  formControlName="color">
                       <nz-option *ngFor="let color of listOfColor" nzLabel="{{ color }}" nzValue="{{ color }}">
                       </nz-option>
                     </nz-select>
@@ -76,7 +76,7 @@
               <div nz-col nzSpan="24">
                 <nz-form-item>
                   <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required">
-                    <nz-year-picker style="width: 100%" nzPlaceHolder="Model Year"  formControlName="year"></nz-year-picker>
+                    <nz-year-picker style="width: 100%" nzPlaceHolder="Yapım Yılı"  formControlName="year"></nz-year-picker>
                   </nz-form-control>
                 </nz-form-item>
               </div>
@@ -84,7 +84,7 @@
               <div nz-col nzSpan="24">
                 <nz-form-item>
                   <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required">
-                    <input nz-input placeholder="Price"  formControlName="price"/>
+                    <input nz-input placeholder="Fiyat"  formControlName="price"/>
                   </nz-form-control>
                 </nz-form-item>
               </div>
@@ -92,7 +92,7 @@
               <div nz-col nzSpan="24">
                 <nz-form-item>
                   <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required">
-                    <textarea rows="1" nz-input placeholder="Description"  formControlName="description"></textarea>
+                    <textarea rows="1" nz-input placeholder="Açıklama"  formControlName="description"></textarea>
                   </nz-form-control>
                 </nz-form-item>
               </div>
