@@ -1,27 +1,45 @@
 <div style="background-color: #F8F8F8; min-height: 91vh;">
-
   <div style="padding-top: 10px;"></div>
-  <div style="margin-top:10px;" class="child" *ngFor="let apart of aparts">
+  <div style="margin-top: 10px;" class="child" *ngFor="let apart of aparts" [@fadeOut]="apart.state">
     <div nz-row>
       <div nz-col nzSpan="8">
-        <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;" [src]="apart.processedImg"
-          alt="profile" />
+        <img
+          class="profile"
+          style="height: 130px; width: 200px; border-radius: 10px;"
+          [src]="apart.processedImg"
+          alt="profile"
+        />
       </div>
       <div nz-col nzSpan="16">
         <h2 style="cursor: pointer; color: #108ee9;">
-          {{apart.brand}} - {{apart.name}}
+          {{ apart.brand }} - {{ apart.name }}
         </h2>
-        <p>{{apart.description}}</p>
-        <hr>
-        <h5>Fiyat : <b>${{apart.price}}</b> - Kat : <b>{{apart.color}}</b> - Metrekare :
-          <b>{{apart.transmission}}</b> - Oda Sayısı : <b>{{apart.type}}</b> - Yıl : <b>{{apart.year | date: 'yyyy'}}</b>
+        <p>{{ apart.description }}</p>
+        <hr />
+        <h5>
+          Fiyat : <b>${{ apart.price }}</b> - Kat : <b>{{ apart.color }}</b> - Metrekare :
+          <b>{{ apart.transmission }}</b> - Oda Sayısı : <b>{{ apart.type }}</b> - Yıl :
+          <b>{{ apart.year | date: 'yyyy' }}</b>
         </h5>
-        <hr>
+        <hr />
         <div style="float: right;">
-          <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" routerLink="/admin/apart/{{apart.id}}">
+          <button
+            style="margin-left: 10px;"
+            nzSize="small"
+            nz-button
+            nzType="primary"
+            routerLink="/admin/apart/{{ apart.id }}"
+          >
             Güncelle
           </button>
-          <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteApart(apart.id)">
+          <button
+            style="margin-left: 10px;"
+            nzSize="small"
+            nz-button
+            nzType="primary"
+            nzDanger
+            (click)="deleteApart(apart.id)"
+          >
             Yayından Kaldır
           </button>
         </div>
