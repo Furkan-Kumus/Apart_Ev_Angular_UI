@@ -1,4 +1,3 @@
-
 <!-- <div *ngIf="!isAdminLoggedIn> TODO: BURANIN BÖYLE OLMASI LAZIM DÜZELTMEK İÇİN YAPTIM SOR 1 -->
 
 <div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
@@ -41,3 +40,7 @@
   </nz-header>
 </div>
 <router-outlet></router-outlet>
+
+<app-login (dataEmitter)="handleData($event)"></app-login>
+
+<p>Gelen Veri: {{ receivedData }}</p>

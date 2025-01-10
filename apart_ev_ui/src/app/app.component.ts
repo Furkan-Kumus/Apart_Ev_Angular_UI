@@ -10,6 +10,12 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'apart_ev_ui';
 
+  receivedData: string = ''; // Gelen veriyi saklayacak değişken
+
+  handleData(data: string) {
+    this.receivedData = data; // Çocuk komponentten gelen veri işleniyor
+  }
+  
   // isCustomerLoggedIn: boolean = StorageService.isCustomerLoggedIn();
   // isAdminLoggedIn: boolean = StorageService.isAdminLoggedIn();
   //TODO: BURASIDA BÖYLEYDİ DÜZELTMEK İÇİN YAPTIM SOR 3
